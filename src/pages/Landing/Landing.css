@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  position: absolute;
+  top: 0;
+  padding: 2rem;
+  justify-content: right;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nextpage-button {
+  margin-top: 3rem;
+}

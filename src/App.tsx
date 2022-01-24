@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
+import './App.css';
+import {AllDaysOnOne} from './pages/AllDaysOnOne/AllDaysOnOne';
+import {EnterBirthday} from './pages/EnterBirthday/EnterBirthday';
+import {Landing} from './pages/Landing/Landing';
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />}>
+          <Route path="enter_birthday" element={<EnterBirthday/>} />
+          <Route path="all_your_days_on_one_screen" element={<AllDaysOnOne />}/> 
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

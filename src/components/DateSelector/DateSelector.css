@@ -1,0 +1,23 @@
+.date-selector {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  border-bottom: 1px solid #c0c0c0;
+  border-radius: 4px;
+}
+
+.date-selector--input {
+  width: 300px;
+  border: 0;
+  margin: 0;
+}
+
+.date-selector--input:active,
+.date-selector--input:focus,
+.date-selector--input:hover {
+  border-color: #b0b0b0;
+  outline: none;
+  color: black;
+  background-color: rgba(0, 0, 0, 0.025);
+}
