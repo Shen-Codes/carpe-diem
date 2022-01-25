@@ -1,11 +1,13 @@
 import React, { ChangeEvent } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { SaveBirthday } from '../../redux/actions';
+import { RootState } from '../../redux/store/store';
 import './DateSelector.css';
 
 
 export const DateSelector = () => {
   const dispatch = useDispatch();
+  const date = useSelector((state: RootState) => state.bdayState.birthday);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
@@ -15,7 +17,7 @@ export const DateSelector = () => {
   return (
     <div className="date-selector">
       <label htmlFor="name">Enter your birthday </label>
-      <input type="date" className="date-selector--input" value="2000-01-01" onChange={handleChange}/>
+      <input type="date" className="date-selector--input" value={date} onChange={handleChange}/>
     </div>
   )
 };

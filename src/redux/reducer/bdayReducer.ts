@@ -1,14 +1,10 @@
 import { SAVE_BIRTHDAY } from "../actions";
 
-interface RootState {
-  birthday: string;
-}
-
 const INITIAL_STATE = {
-  birthday: "12/1/2020",
+  birthday: "2000-01-01",
 };
 
-const bdayReducer = (state = INITIAL_STATE, action: any) => {
+const bdayState = (state = INITIAL_STATE, action: any) => {
   switch (action.type) {
     case SAVE_BIRTHDAY:
       return {
@@ -20,5 +16,4 @@ const bdayReducer = (state = INITIAL_STATE, action: any) => {
   }
 };
 
-export { bdayReducer };
-export type { RootState };
+export { bdayState };
