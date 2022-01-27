@@ -1,8 +1,11 @@
-//a component that takes a date as props from parent and displays it on hover
-// Language: typescript
-export const SingleDay = (props: { date: string }) => {
+import { isPast } from "./SingleDayUtils";
+import './SingleDay.css';
+
+export const SingleDay = ({ date } : {date: string}) => {
+  const relationToNow = isPast(date);
+
   return (
-    <div className="single-day">
+    <div className={`single-day ${relationToNow === 1 ? 'present' : relationToNow < 0 ? 'past' : ''}`}>
     </div>
   )
 }

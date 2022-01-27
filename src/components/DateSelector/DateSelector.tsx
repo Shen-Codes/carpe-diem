@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { SaveBirthday } from '../../redux/actions';
+import { CreateDays, SaveBirthday } from '../../redux/actions';
 import { RootState } from '../../redux/store/store';
 import './DateSelector.css';
 
@@ -12,6 +12,7 @@ export const DateSelector = () => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
     dispatch(SaveBirthday(e.target.value));
+    dispatch(CreateDays());
   }
 
   return (
