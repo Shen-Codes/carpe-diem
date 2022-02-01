@@ -2,17 +2,24 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { SingleDay } from '../../components/SingleDay';
 import { RootState } from '../../redux/store';
-import './AllDaysOnOne.css';
+import {useStyles} from './AllDaysOnOne.styles';
+import { gridColumns, gridRows } from './AllDaysOnOne.util';
+
+export type AllDaysOneOneProps = {
+  column: number;
+  row: number;
+}
 
 export const AllDaysOnOne = () => {
   const allDays = useSelector((state: RootState) => state.bdayState.allDays);
+  
+  const classes = useStyles();
 
   return (
-    <div id='all-days'>
-      {allDays.map((date, index) => {
+    <div className={classes.daysContainer}>
+      {allDays.map(date => {
         return <SingleDay key={date} date={date} />
       })}
     </div>
   );
 };
-
