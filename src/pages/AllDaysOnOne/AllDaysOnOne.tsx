@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { SingleDay } from '../../components/SingleDay';
 import { RootState } from '../../redux/store';
 import {useStyles} from './AllDaysOnOne.styles';
-import { gridColumns, gridRows } from './AllDaysOnOne.util';
 
 export type AllDaysOneOneProps = {
   column: number;

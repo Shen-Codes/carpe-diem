@@ -16,7 +16,7 @@ const bdayState = (state = INITIAL_STATE, action: any) => {
       const { birthday } = state;
       const [year, month, day] = birthday.split("-");
       const allDays = [];
-      for (let i = 0; i < 32142; i++) {
+      for (let i = 0; i < 32120; i++) {
         allDays.push(new Date(Number(year), Number(month) - 1, Number(day) + i).toLocaleDateString());
       }
       return {
