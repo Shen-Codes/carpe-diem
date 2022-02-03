@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { convertDateToMonthDayYear, isPast } from "./SingleDayUtils";
 import './SingleDay.css';
 import { useStyles } from "./SingleDay.styles";
