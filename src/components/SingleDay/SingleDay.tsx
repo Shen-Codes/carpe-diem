@@ -1,6 +1,8 @@
-import { isPast } from "./SingleDayUtils";
+import { useState } from "react";
+import { convertDateToMonthDayYear, isPast } from "./SingleDayUtils";
 import './SingleDay.css';
 import { useStyles } from "./SingleDay.styles";
+import ReactTooltip from "react-tooltip";
 
 export const SingleDay = ({ date } : {date: string}) => {
   const relationToNow = isPast(date);
@@ -8,6 +10,9 @@ export const SingleDay = ({ date } : {date: string}) => {
 
   return (
     <div className={`${classes.singleDay} ${relationToNow === 1 ? 'present' : relationToNow < 0 ? classes.past : ''}`} id={date}>
+      <ReactTooltip id={date} >
+        <span>{convertDateToMonthDayYear(date)}</span>
+      </ReactTooltip>
     </div>
   )
 }

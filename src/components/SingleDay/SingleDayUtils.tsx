@@ -15,3 +15,12 @@ export const isPast = (date: string) => {
   if(yearOne === yearTwo && monthOne === monthTwo && dayOne < dayTwo) return - 1;
   return 1;
 }
+
+export const convertDateToMonthDayYear = (date: string) => {
+  const dateObj = new Date(date);
+  const month = dateObj.getMonth() + 1;
+  const day = dateObj.getDate();
+  const year = dateObj.getFullYear();
+  return `${month}/${day}/${year}`;
+}
+

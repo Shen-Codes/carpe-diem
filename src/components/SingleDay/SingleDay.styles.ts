@@ -3,9 +3,10 @@ import { createUseStyles } from "react-jss";
 export const useStyles = createUseStyles({
   singleDay: {
     backgroundColor: "green",
-    borderRadius: "35%",
-    height: `100%`,
-    width: `100%`,
+    // border: "1px solid white",
+    borderRadius: "50%",
+    height: `75%`,
+    width: `75%`,
   },
   past: {
     backgroundColor: "rgb(109, 109, 109)",
