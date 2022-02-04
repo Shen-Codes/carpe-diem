@@ -10,8 +10,7 @@ export type AllDaysOneOneProps = {
 }
 
 export const AllDaysOnOne = () => {
-  const allDays = useSelector((state: RootState) => state.bdayState.allDays);
-  
+  const allDays = useSelector((state: RootState) => state.bdayState.allDays);  
   const classes = useStyles();
 
   return (

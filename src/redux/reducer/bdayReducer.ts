@@ -1,3 +1,4 @@
+import { convertDateToMonthDayYear } from "../../utils/Calendar";
 import { SAVE_BIRTHDAY, CREATE_DAYS } from "../actions";
 
 const INITIAL_STATE = {
@@ -13,11 +14,13 @@ const bdayState = (state = INITIAL_STATE, action: any) => {
         birthday: action.payload,
       };
     case CREATE_DAYS:
-      const { birthday } = state;
+      const birthday = state.birthday;
       const [year, month, day] = birthday.split("-");
       const allDays = [];
-      for (let i = 0; i < 32120; i++) {
-        allDays.push(new Date(Number(year), Number(month) - 1, Number(day) + i).toLocaleDateString());
+      for (let i = 0; i < 100; i++) {
+        const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day) + i);
+        const convertedDate = convertDateToMonthDayYear(date);
+        allDays.push(convertedDate);
       }
       return {
         ...state,
