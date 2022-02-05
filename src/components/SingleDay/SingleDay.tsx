@@ -3,7 +3,7 @@ import './SingleDay.css';
 import { useStyles } from "./SingleDay.styles";
 import ReactTooltip from "react-tooltip";
 
-export const SingleDay = ({ date } : {date: string}) => {
+const SingleDay = ({ date } : {date: string}) => {
   const relationToNow = isPast(date);
   const classes = useStyles();
 
@@ -15,3 +15,5 @@ export const SingleDay = ({ date } : {date: string}) => {
     </div>
   )
 }
+
+export default SingleDay;

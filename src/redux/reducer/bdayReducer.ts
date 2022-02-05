@@ -17,7 +17,7 @@ const bdayState = (state = INITIAL_STATE, action: any) => {
       const birthday = state.birthday;
       const [year, month, day] = birthday.split("-");
       const allDays = [];
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < 30000; i++) {
         const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day) + i);
         const convertedDate = convertDateToMonthDayYear(date);
         allDays.push(convertedDate);
